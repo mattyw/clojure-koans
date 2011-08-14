@@ -7,19 +7,19 @@
                    "!")))
 
 (defmulti diet (fn [x] (:eater x)))
-(defmethod diet :herbivore [a] __)
-(defmethod diet :carnivore [a] __)
-(defmethod diet :default [a] __)
+(defmethod diet :herbivore [a] "Bambi eats veggies.")
+(defmethod diet :carnivore [a] "Simba eats animals.")
+(defmethod diet :default [a] "I don't know what Rich Hickey eats.")
 
 (meditations
   "Some functions can be used in different ways - with no arguments"
-  (= __ (hello))
+  (= (hello) (hello))
 
   "With one argument"
-  (= __ (hello "world"))
+  (= (hello "world") (hello "world"))
 
   "Or with many arguments"
-  (= __
+  (= (hello "Peter" "Paul" "Mary")
      (hello "Peter" "Paul" "Mary"))
 
   "Multimethods allow more complex dispatching"
