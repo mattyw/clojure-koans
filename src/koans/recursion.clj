@@ -11,10 +11,17 @@
         (recur (dec n) (not acc)))))
 
 (defn recursive-reverse [coll]
-  __)
+  (loop [coll coll
+	  acc ()]
+     (if (seq coll)
+       (recur (rest coll) (conj acc (first coll)))
+       acc)))
 
 (defn factorial [n]
-  __)
+  (loop [n n acc 1]
+    (if (zero? n)
+      acc
+      (recur (dec n) (* acc n)))))
 
 (meditations
   "Recursion ends with a base case"
